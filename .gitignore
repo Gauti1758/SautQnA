@@ -1,0 +1,39 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+pip-log.txt
+*.log
+
+# === VSCode/IDE ===
+.vscode/
+.idea/
+*.swp
+
+# === Docker ===
+*.tar
+*.bak
+
+# === Credential files ===
+credentials/
+*.json
+
+# === OS-specific ===
+.DS_Store
+Thumbs.db
+
+# === Jupyter/IPython ===
+.ipynb_checkpoints/
+
+# === Ignore environment variables files ===
+.env
+.env.*
+
+# === Others ===
+*.sqlite3

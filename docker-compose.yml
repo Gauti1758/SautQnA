@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  qna-tts-app:
+    build: .
+    container_name: qna-tts-container
+    volumes:
+      - ./credentials/credentials.json:/app/credentials.json  # Mount credentials
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+    stdin_open: true        # for interactive prompts if any
+    tty: true               # keep container running
