@@ -4,6 +4,9 @@ from app.tts_engine import auto_play_qa_pairs
 from app.utils import generate_tts, wrap_ssml
 import time
 
+
+# export GOOGLE_APPLICATION_CREDENTIALS="/home/gautam/Downloads/pelagic-cat-427508-v1-6f451366a269.json"
+
 pdf_path = "assets/sample_qna.pdf"
 output_dir = "outputs"
 os.makedirs(output_dir, exist_ok=True)
@@ -34,13 +37,10 @@ for idx, (question, answer) in enumerate(qa_pairs):
     # generate_tts(ssml_q, q_file, voice_name="ar-XA-Wavenet-B", is_ssml=True)
     # generate_tts(ssml_a, a_file, voice_name="ar-XA-Standard-A", is_ssml=True)
     ssml_q = f"""<speak><prosody pitch="+2%" rate="92%"><break time="300ms"/>{question}<break time="400ms"/></prosody></speak>"""
-    generate_tts(ssml_q, q_file, voice_name="ar-XA-Wavenet-B", use_ssml=True)
+    generate_tts(ssml_q, q_file, voice_name="ar-XA-Wavenet-B", is_ssml=True)
 
     ssml_a = f"""<speak><prosody pitch="+1%" rate="89%"><break time="250ms"/>{answer}</prosody></speak>"""
-    generate_tts(ssml_a, a_file, voice_name="ar-XA-Standard-A", use_ssml=True)
-
-
-
+    generate_tts(ssml_a, a_file, voice_name="ar-XA-Standard-A", is_ssml=True)
 
 time.sleep(2)
 

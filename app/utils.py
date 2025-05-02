@@ -2,10 +2,11 @@ from google.cloud import texttospeech
 import wave
 import os
 
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/gautam/Downloads/pelagic-cat-427508-v1-6f451366a269.json"
 client = texttospeech.TextToSpeechClient()
 
 #def generate_tts(text, output_path, voice_name="ar-XA-Standard-A"):
-def generate_tts(text, output_path, voice_name="ar-XA-Standard-A", is_ssml=False):
+def generate_tts(text, output_path, voice_name="ar-XA-Standard-A", is_ssml=True):
     #synthesis_input = texttospeech.SynthesisInput(text=text)
     synthesis_input = (
         texttospeech.SynthesisInput(ssml=text) if is_ssml else texttospeech.SynthesisInput(text=text)

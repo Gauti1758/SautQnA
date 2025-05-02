@@ -1,2 +1,3 @@
 PyMuPDF==1.23.7         # For reading PDFs
 google-cloud-texttospeech==2.15.1  # Google TTS
+Flask==3.0.3
